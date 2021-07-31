@@ -48,6 +48,7 @@ class Filters extends BaseConfig
 				'ruangan', 'ruangan/*',
 				'prodi', 'prodi/*',
 				'ta', 'ta/*',
+				'matkul', 'matkul/*',
 			]],
 			'toolbar',
 			// 'honeypot',

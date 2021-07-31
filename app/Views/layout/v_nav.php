@@ -12,7 +12,10 @@
                     <li><a href="<?= base_url('fakultas') ?>">Fakultas</a></li> 
                     <li><a href="<?= base_url('prodi') ?>">Program Studi</a></li>
                     <li><a href="<?= base_url('ta') ?>">Tahun Akademik</a></li>
-                    <li><a href="#">Mahasiswa</a></li>
+                    <li><a href="<?= base_url('matkul') ?>">Matakuliah</a></li>
+                    <li><a href="<?= base_url('mahasiswa') ?>">Mahasiswa</a></li>
+                    <li><a href="<?= base_url('dosen') ?>">Dosen</a></li>
+                    <li><a href="<?= base_url('user') ?>">User</a></li>
                   </ul>
               </li>
               <li><a href="#">About</a></li>
