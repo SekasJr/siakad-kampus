@@ -125,3 +125,17 @@ Main connection [MySQLi]: No connection could be made because the target machine
 #7 C:\app\siakad-kampus\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #8 C:\app\siakad-kampus\system\Commands\Server\rewrite.php(45): require_once('C:\\app\\siakad-k...')
 #9 {main}
+ERROR - 2021-07-31 11:03:11 --> Table 'db-siakad-kampus.tbl_matkul' doesn't exist
+CRITICAL - 2021-07-31 11:03:11 --> Table 'db-siakad-kampus.tbl_matkul' doesn't exist
+#0 C:\app\siakad-kampus\system\Database\MySQLi\Connection.php(329): mysqli->query('SELECT *\nFROM `...')
+#1 C:\app\siakad-kampus\system\Database\BaseConnection.php(732): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\app\siakad-kampus\system\Database\BaseConnection.php(647): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\app\siakad-kampus\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\app\siakad-kampus\app\Models\ModelMatkul.php(13): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\app\siakad-kampus\app\Controllers\Matkul.php(18): App\Models\ModelMatkul->allData()
+#6 C:\app\siakad-kampus\system\CodeIgniter.php(928): App\Controllers\Matkul->index()
+#7 C:\app\siakad-kampus\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Matkul))
+#8 C:\app\siakad-kampus\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\app\siakad-kampus\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\app\siakad-kampus\system\Commands\Server\rewrite.php(45): require_once('C:\\app\\siakad-k...')
+#11 {main}
