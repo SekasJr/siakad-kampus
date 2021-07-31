@@ -18,7 +18,19 @@ class Matkul extends BaseController
 		[
 			'title'     => 'Mata Kuliah',
             'prodi'  => $this->ModelProdi->allData(),
-			'isi'       => 'admin/v_matkul'
+			'isi'       => 'admin/matkul/v_matkul'
+		];
+		return view('layout/v_wrapper', $data);
+	}
+
+    public function detail($id_prodi)
+	{
+		$data = 
+		[
+			'title'     => 'Mata Kuliah',
+            'prodi'  => $this->ModelProdi->detail_Data($id_prodi),
+            'matkul'  => $this->ModelMatkul->allDataMatkul($id_prodi),
+			'isi'       => 'admin/matkul/v_detail'
 		];
 		return view('layout/v_wrapper', $data);
 	}

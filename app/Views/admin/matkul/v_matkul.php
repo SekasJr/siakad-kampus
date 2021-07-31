@@ -47,7 +47,7 @@
                                 </td>
                                 <td class="text-center">
                                     <a href="<?= base_url('matkul/detail/' . $value['id_prodi']) ?>" class="btn btn-warning btn-sm btn-flat">
-                                        <i class="fa fa-plus"> Matakuliah</i>
+                                        <i class="fa fa-info-circle"> Matakuliah</i>
                                     </a>
                                    
                                 </td>

@@ -13,6 +13,14 @@ class ModelMatkul extends Model
         ->get()->getResultArray();
    }
 
+   public function allDataMatkul($id_prodi)
+   {
+    return $this->db->table('tbl_matkul')
+    ->where('id_prodi', $id_prodi)
+    ->orderBy('smt', 'ASC')
+    ->get()->getResultArray();
+   }
+
    public function add($data)
    {
        $this->db->table('tbl_matkul')->insert($data);
