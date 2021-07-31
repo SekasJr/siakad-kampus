@@ -32,5 +32,27 @@ class Ta extends BaseController
         session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
         return redirect()->to(base_url('ta'));
     }
+
+	public function edit($id_ta)
+    {
+        $data = [
+			'id_ta' => $id_ta,
+            'ta' => $this->request->getPost('ta'),
+            'semester' => $this->request->getPost('semester'),
+        ];
+        $this->ModelTa->edit($data);
+        session()->setFlashdata('pesan', 'Data berhasil diubah.');
+        return redirect()->to(base_url('ta'));
+    }
+
+	public function delete($id_ta)
+    {
+        $data = [
+            'id_ta' => $id_ta,
+        ];
+        $this->ModelTa->delete_data($data);
+        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
+        return redirect()->to(base_url('ta'));
+    }
 	//------------------------------------------------------------------------------
 }
