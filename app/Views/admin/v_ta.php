@@ -62,3 +62,117 @@
 
     </div>
 </div>
+
+<!-- /.modal add Tahun Akademik -->
+<div class="modal fade" id="add">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Tambah <?= $title ?> </h4>
+            </div>
+            <div class="modal-body">
+                <?php 
+                echo form_open('ta/add');
+                ?>
+
+                <div class="form-group">
+                    <label>Tahun Akademik</label>
+                    <input name="ta" class="form-control" placeholder="Ex: 2020/2021 " required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Semester</label>
+                    <select name="semester" class="form-control">
+                        <option value="Ganjil">Ganjil</option>
+                        <option value="Genap">Genap</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-left btn-flat" data-dismiss="modal">Kembali</button>
+                <button type="submit" class="btn btn-success btn-flat">Simpan</button>
+            </div>
+            <?php echo form_close() ?>
+        </div>
+    <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- /.modal edit tahun akademik-->
+<?php  foreach ($ta as $key => $value) { ?>
+    <div class="modal fade" id="edit<?= $value['id_ta'] ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Edit <?= $title ?></h4>
+                </div>
+                <div class="modal-body">
+                    <?php 
+                    echo form_open('ta/edit/' . $value['id_ta']);
+                    ?>
+
+                    <div class="form-group">
+                        <label>Tahun Akademik</label>
+                        <input name="ta" value="<?= $value['ta'] ?>" class="form-control" placeholder="Tahun Akademik" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Semester</label>
+                        <select name="semester" class="form-control">
+                            <option value="Ganjil" <?php if ($value['semester'] == 'Ganjil') {
+                                                        echo 'Selected';
+                                                    } ?>>Ganjil</option>
+                            <option value="Genap" <?php if ($value['semester'] == 'Genap') {
+                                                        echo 'Selected';
+                                                    } ?>>Genap</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning pull-left btn-flat" data-dismiss="modal">Kembali</button>
+                    <button type="submit" class="btn btn-success btn-flat">Simpan</button>
+                </div>
+                <?php echo form_close() ?>
+            </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+<?php } ?>
+
+<!-- /.modal delete tahun akademik-->
+<?php  foreach ($ta as $key => $value) { ?>
+    <div class="modal fade" id="delete<?= $value['id_ta'] ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Hapus <?= $title ?></h4>
+                </div>
+                <div class="modal-body">
+                   Hapus data <b><?= $value['ta'] ?> semester <?= $value['semester'] ?></b>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning pull-left btn-flat" data-dismiss="modal">Kembali</button>
+                    <a href="<?= base_url('ta/delete/' . $value['id_ta']) ?>" class="btn btn-success btn-flat">Hapus</a>
+                </div>
+     
+            </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+<?php } ?>
