@@ -1,0 +1,101 @@
+CRITICAL - 2021-07-28 01:53:15 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\app\siakad-kampus\system\CodeIgniter.php(228): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\app\siakad-kampus\system\CodeIgniter.php(180): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\app\siakad-kampus\system\bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#3 C:\app\siakad-kampus\spark(46): require('C:\\app\\siakad-k...')
+#4 {main}
+CRITICAL - 2021-07-28 01:54:12 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\app\siakad-kampus\system\CodeIgniter.php(228): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\app\siakad-kampus\system\CodeIgniter.php(180): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\app\siakad-kampus\system\bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#3 C:\app\siakad-kampus\spark(46): require('C:\\app\\siakad-k...')
+#4 {main}
+CRITICAL - 2021-07-28 01:54:15 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\app\siakad-kampus\system\CodeIgniter.php(228): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\app\siakad-kampus\system\CodeIgniter.php(180): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\app\siakad-kampus\system\bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#3 C:\app\siakad-kampus\spark(46): require('C:\\app\\siakad-k...')
+#4 {main}
+CRITICAL - 2021-07-28 01:56:54 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\app\siakad-kampus\system\CodeIgniter.php(228): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\app\siakad-kampus\system\CodeIgniter.php(180): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\app\siakad-kampus\system\bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#3 C:\app\siakad-kampus\spark(46): require('C:\\app\\siakad-k...')
+#4 {main}
+CRITICAL - 2021-07-28 01:58:19 --> The framework needs the following extension(s) installed and loaded: intl.
+#0 C:\app\siakad-kampus\system\CodeIgniter.php(228): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl')
+#1 C:\app\siakad-kampus\system\CodeIgniter.php(180): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+#2 C:\app\siakad-kampus\system\bootstrap.php(157): CodeIgniter\CodeIgniter->initialize()
+#3 C:\app\siakad-kampus\spark(46): require('C:\\app\\siakad-k...')
+#4 {main}
+CRITICAL - 2021-07-28 06:23:57 --> Invalid file: layout.v_wrapper
+#0 C:\app\siakad-kampus\system\View\View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('layout.v_wrappe...')
+#1 C:\app\siakad-kampus\system\Common.php(1271): CodeIgniter\View\View->render('layout.v_wrappe...', Array, true)
+#2 C:\app\siakad-kampus\app\Controllers\Home.php(14): view('layout.v_wrappe...', Array)
+#3 C:\app\siakad-kampus\system\CodeIgniter.php(928): App\Controllers\Home->index()
+#4 C:\app\siakad-kampus\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#5 C:\app\siakad-kampus\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\app\siakad-kampus\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\app\siakad-kampus\system\Commands\Server\rewrite.php(45): require_once('C:\\app\\siakad-k...')
+#8 {main}
+CRITICAL - 2021-07-28 08:02:01 --> Invalid file: v_login.php
+#0 C:\app\siakad-kampus\system\View\View.php(213): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('v_login.php')
+#1 C:\app\siakad-kampus\system\Common.php(1271): CodeIgniter\View\View->render('v_login', Array, true)
+#2 C:\app\siakad-kampus\app\Views\layout\v_content.php(3): view('v_login')
+#3 C:\app\siakad-kampus\system\View\View.php(230): include('C:\\app\\siakad-k...')
+#4 C:\app\siakad-kampus\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\app\siakad-kampus\system\Common.php(1271): CodeIgniter\View\View->render('layout/v_conten...', Array, true)
+#6 C:\app\siakad-kampus\app\Views\layout\v_wrapper.php(6): view('layout/v_conten...')
+#7 C:\app\siakad-kampus\system\View\View.php(230): include('C:\\app\\siakad-k...')
+#8 C:\app\siakad-kampus\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#9 C:\app\siakad-kampus\system\Common.php(1271): CodeIgniter\View\View->render('layout/v_wrappe...', Array, true)
+#10 C:\app\siakad-kampus\app\Controllers\Auth.php(14): view('layout/v_wrappe...', Array)
+#11 C:\app\siakad-kampus\system\CodeIgniter.php(928): App\Controllers\Auth->index()
+#12 C:\app\siakad-kampus\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#13 C:\app\siakad-kampus\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#14 C:\app\siakad-kampus\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#15 C:\app\siakad-kampus\system\Commands\Server\rewrite.php(45): require_once('C:\\app\\siakad-k...')
+#16 {main}
+CRITICAL - 2021-07-28 08:40:56 --> Call to undefined function form_open()
+#0 C:\app\siakad-kampus\system\View\View.php(230): include()
+#1 C:\app\siakad-kampus\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\app\siakad-kampus\system\Common.php(1271): CodeIgniter\View\View->render('v_login', Array, true)
+#3 C:\app\siakad-kampus\app\Views\layout\v_content.php(3): view('v_login')
+#4 C:\app\siakad-kampus\system\View\View.php(230): include('C:\\app\\siakad-k...')
+#5 C:\app\siakad-kampus\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#6 C:\app\siakad-kampus\system\Common.php(1271): CodeIgniter\View\View->render('layout/v_conten...', Array, true)
+#7 C:\app\siakad-kampus\app\Views\layout\v_wrapper.php(6): view('layout/v_conten...')
+#8 C:\app\siakad-kampus\system\View\View.php(230): include('C:\\app\\siakad-k...')
+#9 C:\app\siakad-kampus\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#10 C:\app\siakad-kampus\system\Common.php(1271): CodeIgniter\View\View->render('layout/v_wrappe...', Array, true)
+#11 C:\app\siakad-kampus\app\Controllers\Auth.php(14): view('layout/v_wrappe...', Array)
+#12 C:\app\siakad-kampus\system\CodeIgniter.php(928): App\Controllers\Auth->index()
+#13 C:\app\siakad-kampus\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#14 C:\app\siakad-kampus\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#15 C:\app\siakad-kampus\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#16 C:\app\siakad-kampus\system\Commands\Server\rewrite.php(45): require_once('C:\\app\\siakad-k...')
+#17 {main}
+CRITICAL - 2021-07-28 09:23:54 --> Username is not a valid rule.
+#0 C:\app\siakad-kampus\system\Validation\Validation.php(321): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('Username')
+#1 C:\app\siakad-kampus\system\Validation\Validation.php(159): CodeIgniter\Validation\Validation->processRules('username', 'Username', '', Array, Array)
+#2 C:\app\siakad-kampus\system\Controller.php(183): CodeIgniter\Validation\Validation->run()
+#3 C:\app\siakad-kampus\app\Controllers\Auth.php(30): CodeIgniter\Controller->validate(Array)
+#4 C:\app\siakad-kampus\system\CodeIgniter.php(928): App\Controllers\Auth->cek_login()
+#5 C:\app\siakad-kampus\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\app\siakad-kampus\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\app\siakad-kampus\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\app\siakad-kampus\system\Commands\Server\rewrite.php(45): require_once('C:\\app\\siakad-k...')
+#9 {main}
+ERROR - 2021-07-28 10:02:49 --> Error connecting to the database: Access denied for user ''@'localhost' (using password: NO)
+CRITICAL - 2021-07-28 10:02:49 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+#0 C:\app\siakad-kampus\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\app\siakad-kampus\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\app\siakad-kampus\app\Models\ModelAuth.php(14): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\app\siakad-kampus\app\Controllers\Auth.php(55): App\Models\ModelAuth->login_user('23232323', '232323')
+#4 C:\app\siakad-kampus\system\CodeIgniter.php(928): App\Controllers\Auth->cek_login()
+#5 C:\app\siakad-kampus\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\app\siakad-kampus\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\app\siakad-kampus\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\app\siakad-kampus\system\Commands\Server\rewrite.php(45): require_once('C:\\app\\siakad-k...')
+#9 {main}
