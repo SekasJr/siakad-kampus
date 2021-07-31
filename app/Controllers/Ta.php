@@ -21,4 +21,16 @@ class Ta extends BaseController
 		];
 		return view('layout/v_wrapper', $data);
 	}
+
+	public function add()
+    {
+        $data = [
+            'ta' => $this->request->getPost('ta'),
+            'semester' => $this->request->getPost('semester'),
+        ];
+        $this->ModelTa->add($data);
+        session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
+        return redirect()->to(base_url('ta'));
+    }
+	//------------------------------------------------------------------------------
 }
