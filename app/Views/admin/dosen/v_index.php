@@ -50,7 +50,7 @@
                                 <td><?= $value['password'] ?></td>
                                 <td class="text-center"><img src="<?= base_url('fotodosen/' . $value['foto_dosen']) ?>" class="img-circle" width="70px" height="70px"></td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-warning btn-sm btn-flat">
+                                    <a href="<?= base_url('dosen/edit/' . $value['id_dosen']) ?>" class="btn btn-warning btn-sm btn-flat">
                                         <i class="fa fa-pencil"></i>
                                     </a>
                                     <button class="btn btn-danger btn-sm btn-flat" data-toggle="modal" data-target="#delete<?= $value['id_dosen'] ?>">

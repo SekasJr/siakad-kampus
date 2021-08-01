@@ -13,6 +13,13 @@ class ModelDosen extends Model
         ->get()->getResultArray();
    }
 
+   public function detailData($id_dosen)
+   {
+       return $this->db->table('tbl_dosen')
+        ->where('id_dosen', $id_dosen)
+        ->get()->getRowArray();
+   }
+
    public function add($data)
    {
        $this->db->table('tbl_dosen')->insert($data);

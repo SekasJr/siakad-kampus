@@ -34,35 +34,35 @@
                 <?php } ?>
 
                 <?php 
-                echo form_open_multipart('dosen/insert');
+                echo form_open_multipart('dosen/update/' . $dosen['id_dosen']);
                 ?>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label>Kode Dosen</label>
-                        <input name="kode_dosen" class="form-control" placeholder="Kode Dosen">
+                        <input name="kode_dosen" value="<?= $dosen['id_dosen'] ?>" class="form-control" placeholder="Kode Dosen">
                     </div>
                 </div>
 
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label>NIDN</label>
-                        <input name="nidn" class="form-control" placeholder="NIDN">
+                        <input name="nidn" value="<?= $dosen['nidn'] ?>" class="form-control" placeholder="NIDN">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Nama Dosen</label>
-                    <input name="nama_dosen" class="form-control" placeholder="Nama Dosen">
+                    <input name="nama_dosen" value="<?= $dosen['nama_dosen'] ?>" class="form-control" placeholder="Nama Dosen">
                 </div>
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input name="password" class="form-control" placeholder="Password">
+                    <input name="password" value="<?= $dosen['password'] ?>" class="form-control" placeholder="Password">
                 </div>
 
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <img src="<?= base_url('fotodosen/default.png') ?>" id="gambar_load" width="215px">
+                        <img src="<?= base_url('fotodosen/' . $dosen['foto_dosen']) ?>" id="gambar_load" width="215px">
                     </div>
                 </div>
 
@@ -71,10 +71,7 @@
                         <label>Foto Dosen</label>
                         <input type="file" name="foto_dosen" id="preview_gambar" class="form-control">
                     </div>
-                </div>
-
-
-                
+                </div>  
             </div>
             <div class="modal-footer">
                 <a href="<?= base_url('dosen')?>" class="btn btn-warning pull-left btn-flat">Kembali</a>
