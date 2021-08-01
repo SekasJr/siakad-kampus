@@ -12,26 +12,14 @@
                 <h3 class="box-title">Data <?= $title ?></h3>
 
                 <div class="box-tools pull-right">
-                    <button type="button" class="btn btn-box-tool" data-toggle="modal" data-target="#add">
+                    <a href="<?= base_url('dosen/add') ?>" class="btn btn-box-tool">
                         <i class="fa fa-plus"> Add</i>
-                    </button>
+                    </a>
                 </div>
                 <!-- /.box-tools -->
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-
-            <?php 
-                $errors = session()->getFlashdata('errors');
-                if (!empty($errors)) { ?>
-                    <div class="alert alert-danger" role="alert">
-                        <ul>
-                            <?php foreach ($errors as $key => $value) { ?>
-                                <li><?= esc($value) ?></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                <?php } ?>
 
             <?php 
                 if (session()->getFlashdata('pesan')) {
