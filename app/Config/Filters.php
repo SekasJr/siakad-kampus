@@ -49,6 +49,7 @@ class Filters extends BaseConfig
 				'prodi', 'prodi/*',
 				'ta', 'ta/*',
 				'matkul', 'matkul/*',
+				'user', 'user/*',
 			]],
 			'toolbar',
 			// 'honeypot',
