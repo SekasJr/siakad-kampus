@@ -72,9 +72,7 @@
                         <input type="file" name="foto_dosen" id="preview_gambar" class="form-control">
                     </div>
                 </div>
-
-
-                
+  
             </div>
             <div class="modal-footer">
                 <a href="<?= base_url('dosen')?>" class="btn btn-warning pull-left btn-flat">Kembali</a>

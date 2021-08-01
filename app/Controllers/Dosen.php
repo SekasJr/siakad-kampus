@@ -199,5 +199,21 @@ class Dosen extends BaseController
             return redirect()->to(base_url('dosen/edit/' . $id_dosen));
 		}
 	}
+
+	public function delete($id_dosen)
+    {
+		//jika foto diganti, hapus foto lama lalu ganti foto baru
+		$dosen = $this->ModelDosen->detailData($id_dosen);
+		if ($dosen['foto_dosen'] != "") {
+			unlink('fotodosen/' . $dosen['foto_dosen']);
+		}
+
+        $data = [
+            'id_dosen' => $id_dosen,
+        ];
+        $this->ModelDosen->delete_data($data);
+        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
+        return redirect()->to(base_url('dosen'));
+    }
 	//-------------------------------------------------------------------------------------------
 }
