@@ -50,7 +50,7 @@ class Prodi extends BaseController
                 'rules' => 'required|is_unique[tbl_prodi.kode_prodi]',
                 'errors' => [
                     'required' => '{field} Wajib diisi!',
-                    'is_unique' => '{field} Kode Program Studi sudah ada, input kode lain!'
+                    'is_unique' => '{field} sudah ada, input kode lain!'
 				]
 			],
 			'prodi' => [
@@ -64,7 +64,7 @@ class Prodi extends BaseController
                 'label' => 'Jenjang',
                 'rules' => 'required',
                 'errors' => [
-                    'required' => '{field} Program Studi wajib diisi!'
+                    'required' => '{field} wajib diisi!'
 				]
 			],
 		])) {

@@ -30,7 +30,6 @@
                                 <li><?= esc($value) ?></li>
                             <?php } ?>
                         </ul>
-
                     </div>
                 <?php } ?>
 
