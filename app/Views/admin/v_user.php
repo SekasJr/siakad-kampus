@@ -126,3 +126,56 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+
+<!-- /.modal edit -->
+<?php  foreach ($user as $key => $value) { ?>
+    <div class="modal fade" id="edit<?= $value['id_user'] ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Ubah Data <?= $title ?></h4>
+                </div>
+                <div class="modal-body">
+                    <?php 
+                    echo form_open_multipart('user/edit/' . $value['id_user']);
+                    ?>
+
+                    <div class="form-group">
+                        <label>Nama User</label>
+                        <input name="nama_user" value="<?= $value['nama_user'] ?>" class="form-control" placeholder="Nama User" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input name="username" value="<?= $value['username'] ?>" class="form-control" placeholder="Username">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input name="password" value="<?= $value['password'] ?>" class="form-control" placeholder="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ganti Foto</label>
+                        <input type="file" name="foto" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <img src="<?= base_url('foto/' . $value['foto']) ?>" class="img width="100px" height="100px">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning pull-left btn-flat" data-dismiss="modal">Kembali</button>
+                    <button type="submit" class="btn btn-success btn-flat">Simpan</button>
+                </div>
+                <?php echo form_close() ?>
+            </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+<?php } ?>
