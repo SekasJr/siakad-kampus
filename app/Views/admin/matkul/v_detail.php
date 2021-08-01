@@ -1,6 +1,6 @@
 <section class="content-header">
     <h1>
-        <?= $title ?>
+        <a href="<?= base_url('matkul') ?>"><?= $title ?></a>
         <small>Prodi <?= $prodi['prodi'] ?></small>
     </h1>
     
@@ -51,13 +51,26 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+
+            <?php 
+                $errors = session()->getFlashdata('errors');
+                if (!empty($errors)) { ?>
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            <?php foreach ($errors as $key => $value) { ?>
+                                <li><?= esc($value) ?></li>
+                            <?php } ?>
+                        </ul>
+
+                    </div>
+            <?php } ?>
+
             <?php 
                 if (session()->getFlashdata('pesan')) {
                     echo '<div class="alert alert-success" role="alert">';
                     echo session()->getFlashdata('pesan');
                     echo '</div>';
-                }
-            ?>
+                } ?>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -96,3 +109,107 @@
     </div>
 
 </div>
+
+<!-- /.modal add -->
+<div class="modal fade" id="add">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Tambah <?= $title ?></h4>
+            </div>
+            <div class="modal-body">
+                <?php 
+                echo form_open('matkul/add/' . $prodi['id_prodi']);
+                ?>
+
+                <div class="form-group">
+                    <label>Kode</label>
+                    <input name="kode_matkul" class="form-control" placeholder="Kode Mata Kuliah">
+                </div>
+
+                <div class="form-group">
+                    <label>Mata Kuliah</label>
+                    <input name="matkul" class="form-control" placeholder="Mata Kuliah">
+                </div>
+
+                <div class="form-group">
+                    <label>SKS</label>
+                    <select name="sks" class="form-control">
+                        <option selected disabled>--Pilih SKS--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Semester</label>
+                    <select name="smt" class="form-control">
+                        <option selected disabled>--Pilih Semester--</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select name="kategori" class="form-control">
+                        <option selected disabled>--Pilih Kategori--</option>
+                        <option value="Wajib">Wajib</option>
+                        <option value="Pilihan">Pilihan</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning pull-left btn-flat" data-dismiss="modal">Kembali</button>
+                <button type="submit" class="btn btn-success btn-flat">Simpan</button>
+            </div>
+            <?php echo form_close() ?>
+        </div>
+    <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<!-- /.modal delete -->
+<?php  foreach ($matkul as $key => $value) { ?>
+    <div class="modal fade" id="delete<?= $value['id_matkul'] ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Hapus <?= $title ?></h4>
+                </div>
+                <div class="modal-body">
+                   Hapus Mata Kuliah <b><?= $value['matkul'] ?></b>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning pull-left btn-flat" data-dismiss="modal">Kembali</button>
+                    <a href="<?= base_url('matkul/delete/' . $prodi['id_prodi'] . '/' . $value['id_matkul']) ?>" class="btn btn-success btn-flat">Hapus</a>
+                </div>
+     
+            </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+<?php } ?>
