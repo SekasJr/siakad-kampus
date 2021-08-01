@@ -9,7 +9,7 @@ class User extends BaseController
     public function __construct()
     {
         helper('form');
-        $this->ModelUser = new ModelUser;
+        $this->ModelUser = new ModelUser();
     }
 
 	public function index()

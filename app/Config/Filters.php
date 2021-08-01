@@ -50,6 +50,7 @@ class Filters extends BaseConfig
 				'ta', 'ta/*',
 				'matkul', 'matkul/*',
 				'user', 'user/*',
+				'dosen', 'dosen/*',
 			]],
 			'toolbar',
 			// 'honeypot',
