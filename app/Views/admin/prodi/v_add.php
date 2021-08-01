@@ -60,7 +60,7 @@
                 <div class="form-group">
                     <label>Jenjang</label>
                     <select name="jenjang" class="form-control">
-                        <option selected disabled="">--Pilih Jenjang--</option>
+                        <option selected disabled>--Pilih Jenjang--</option>
                         <option value="D1">D1</option>
                         <option value="D2">D2</option>
                         <option value="D3">D3</option>

@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use App\Models\ModelMatkul;
 use App\Models\ModelProdi;
+use CodeIgniter\HTTP\Request;
+
 class Matkul extends BaseController
 {
     public function __construct()
@@ -34,4 +36,81 @@ class Matkul extends BaseController
 		];
 		return view('layout/v_wrapper', $data);
 	}
+
+	public function add($id_prodi)
+	{
+		if ($this->validate([
+			'kode_matkul' => [
+                'label' => 'Kode Mata Kuliah',
+                'rules' => 'required|is_unique[tbl_matkul.kode_matkul]',
+                'errors' => [
+                    'required' => '{field} Wajib diisi!',
+                    'is_unique' => '{field} sudah ada, input kode lain!'
+				]
+			],
+			'matkul' => [
+                'label' => 'Mata Kuliah',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Nama {field} Wajib diisi!'
+				]
+			],
+			'sks' => [
+                'label' => 'SKS',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+				]
+			],
+			'smt' => [
+                'label' => 'Semester',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+				]
+			],
+			'kategori' => [
+                'label' => 'Kategori',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} wajib diisi!'
+				]
+			],
+		])) {
+			//jika valid
+			$smt = $this->request->getPost('smt');
+			if ( $smt == 1 || $smt == 3 || $smt == 5 || $smt == 7) {
+				$semester = 'Ganjil';
+			}else {
+				$semester = 'Genap';
+			}
+
+			$data = [
+				'kode_matkul' => $this->request->getPost('kode_matkul'),
+				'matkul' => $this->request->getPost('matkul'),
+				'sks' => $this->request->getPost('sks'),
+				'smt' => $this->request->getPost('smt'),
+				'semester' => $semester,
+				'kategori' => $this->request->getPost('kategori'),
+				'id_prodi' => $id_prodi,
+			];
+			$this->ModelMatkul->add($data);
+			session()->setFlashdata('pesan', 'Data berhasil ditambahkan.');
+			return redirect()->to(base_url('matkul/detail/' . $id_prodi));
+		}else {
+			//jika tidak valid
+			session()->setFlashdata('errors', \Config\Services::validation()->getErrors());
+            return redirect()->to(base_url('matkul/detail/' . $id_prodi));
+		}
+	}
+
+	public function delete($id_prodi, $id_matkul)
+    {
+        $data = [
+            'id_matkul' => $id_matkul,
+        ];
+        $this->ModelMatkul->delete_data($data);
+        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
+        return redirect()->to(base_url('matkul/detail/' . $id_prodi));
+    }
 }
