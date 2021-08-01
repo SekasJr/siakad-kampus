@@ -164,7 +164,7 @@
                     </div>
 
                     <div class="form-group">
-                        <img src="<?= base_url('foto/' . $value['foto']) ?>" class="img width="100px" height="100px">
+                        <img src="<?= base_url('foto/' . $value['foto']) ?>" class="img width=100px" height="100px">
                     </div>
 
                 </div>
@@ -178,4 +178,32 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
+<?php } ?>
+
+
+<!-- /.modal delete -->
+<?php  foreach ($user as $key => $value) { ?>
+    <div class="modal fade" id="delete<?= $value['id_user'] ?>">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Hapus <?= $title ?></h4>
+                </div>
+                <div class="modal-body">
+                   Hapus data <b><?= $value['nama_user'] ?></b>?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning pull-left btn-flat" data-dismiss="modal">Kembali</button>
+                    <a href="<?= base_url('user/delete/' . $value['id_user']) ?>" class="btn btn-success btn-flat">Hapus</a>
+                </div>
+     
+            </div>
+        <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
 <?php } ?>
