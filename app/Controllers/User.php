@@ -132,7 +132,7 @@ class User extends BaseController
 				);
 				$this->ModelUser->edit($data);
 			}else {
-				//meengganto foto lama yang telah diupload
+				//mengganti foto lama yang telah diupload
 				$user = $this->ModelUser->detail_Data($id_user);
 				if ($user['foto'] != "") {
 					unlink('foto/' . $user['foto']);
@@ -162,6 +162,22 @@ class User extends BaseController
             return redirect()->to(base_url('user'));
 		}
 	}
+
+	public function delete($id_user)
+    {
+		//menghapus foto lama yang telah diupload
+		$user = $this->ModelUser->detail_Data($id_user);
+		if ($user['foto'] != "") {
+			unlink('foto/' . $user['foto']);
+		}
+
+        $data = [
+            'id_user' => $id_user,
+        ];
+        $this->ModelUser->delete_data($data);
+        session()->setFlashdata('pesan', 'Data berhasil dihapus.');
+        return redirect()->to(base_url('user'));
+    }
 
 	//----------------------------------------------------------------------------------------------
 }
