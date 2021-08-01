@@ -180,7 +180,6 @@
     </div>
 <?php } ?>
 
-
 <!-- /.modal delete -->
 <?php  foreach ($user as $key => $value) { ?>
     <div class="modal fade" id="delete<?= $value['id_user'] ?>">
